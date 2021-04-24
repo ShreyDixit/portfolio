@@ -9,8 +9,16 @@ export class HomepageComponent implements OnInit, AfterViewInit {
 
   typewriter_text: string = "WEB DEVELOPER + DATA SCIENTIST";
   typewriter_display: string = "";
+  links: any[];
 
-  constructor() { }
+  constructor() {
+    this.links = [
+      {"name": "About", "href": "#"},
+      {"name": "About", "href": "#"},
+      {"name": "About", "href": "#"},
+      {"name": "About", "href": "#"},
+    ];
+   }
 
   ngOnInit(): void {
   }

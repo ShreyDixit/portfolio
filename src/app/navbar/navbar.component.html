@@ -1,0 +1,17 @@
+<nav class="nav">
+    <div class="container">
+        <div class="logo">
+            <a href="#"></a>
+        </div>
+        <div id="mainListDiv" class="main_list" [ngClass]="sideNav ? 'show_list': ''">
+            <ul class="navlinks">
+                <li (click)="sideNav=!sideNav" *ngFor="let link of links"><a [href]="link.href">{{link.name}}</a></li>
+            </ul>
+        </div>
+        <span class="navTrigger" [ngClass]="sideNav ? 'active': ''" (click)="sideNav=!sideNav">
+            <i></i>
+            <i></i>
+            <i></i>
+        </span>
+    </div>
+</nav>
