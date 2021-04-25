@@ -335,5 +335,7 @@
 
 .affix {
     padding-bottom: 10px;
-    background-color: #111;
+    background-color: black;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
 }

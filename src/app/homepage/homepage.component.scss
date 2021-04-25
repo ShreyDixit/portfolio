@@ -4,41 +4,63 @@
 }
 
 #about-me {
-    background: url("https://images.unsplash.com/photo-1611647832580-377268dba7cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80") no-repeat;
-    background-size: cover;
-    display: grid;
-    place-items: center;
-    object-position: center;
-    object-fit: contain;
+  background: url("https://images.unsplash.com/photo-1611647832580-377268dba7cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80")
+    no-repeat;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+  object-position: center;
+  object-fit: contain;
 }
 
 #about-me .name {
-    font-weight: bold;
-    font-size: 36px;
-    letter-spacing: 4px;
-    margin-bottom: 7px;
+  font-weight: bold;
+  font-size: 36px;
+  letter-spacing: 4px;
+  margin-bottom: 7px;
 }
 
 .highlight {
-    color: white;
-    font-weight: 200;
-    font-size: 17.4px;
+  color: white;
+  font-weight: 200;
+  font-size: 17.4px;
 }
 
 .highlight span {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .name-highlight {
-    text-align: center;
+  text-align: center;
 }
 
 .full-page {
-    height: 100vh;
+  height: 100vh;
+}
+
+.about-heading {
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+}
+
+.about-para {
+  font-size: 20px;
+  color: #484848;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
 }
 
 .padding-div {
   padding-top: 50px;
+  height: 100%;
+  position: relative;
+}
+
+.skills {
+  position: absolute;
+  bottom: 50px;
 }
 
 .blink {

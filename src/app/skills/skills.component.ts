@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
@@ -13,15 +13,16 @@ export class SkillsComponent implements AfterViewInit {
   amountToMove = 0;
   classes = new Array(5).fill("inactive")
 
-  constructor() {
+  constructor(private cdRef: ChangeDetectorRef) {
     this.classes[this.currentSlide] = "active"
   }
 
   ngAfterViewInit() {
     setInterval(() => {
       this.slideTo(this.currentSlide + 1)
-    }, 5000);
+    }, 1000);
     this.width = this.skills.length + "00%";
+    this.cdRef.detectChanges();
   }
 
   public slideTo(i: number) {
