@@ -1,4 +1,9 @@
-.about-me {
+.container-all {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+#about-me {
     background: url("https://images.unsplash.com/photo-1611647832580-377268dba7cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80") no-repeat;
     background-size: cover;
     display: grid;
@@ -7,7 +12,7 @@
     object-fit: contain;
 }
 
-.about-me .name {
+#about-me .name {
     font-weight: bold;
     font-size: 36px;
     letter-spacing: 4px;

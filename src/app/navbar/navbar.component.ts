@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -9,11 +9,18 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   @Input() links: any;
+  @Input() translateY: number = 0;
+  @Output() clickedElIdx = new EventEmitter<number>();
+
   sideNav = false
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  scrollTo(idx: number): void {
+    this.clickedElIdx.emit(idx + 1);
   }
 
 }

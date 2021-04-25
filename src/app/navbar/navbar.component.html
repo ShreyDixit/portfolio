@@ -1,11 +1,13 @@
-<nav class="nav">
+<nav class="nav" [ngClass]="translateY>0 ? 'affix':''">
     <div class="container">
         <div class="logo">
             <a href="#"></a>
         </div>
         <div id="mainListDiv" class="main_list" [ngClass]="sideNav ? 'show_list': ''">
             <ul class="navlinks">
-                <li (click)="sideNav=!sideNav" *ngFor="let link of links"><a [href]="link.href">{{link.name}}</a></li>
+                <li (click)="sideNav=!sideNav; scrollTo(i)" *ngFor="let link of links; let i=index">
+                    <a [ngClass]="translateY==(i+1)?'underlined':''" [href]="link.href">{{link.name}}</a>
+                </li>
             </ul>
         </div>
         <span class="navTrigger" [ngClass]="sideNav ? 'active': ''" (click)="sideNav=!sideNav">

@@ -1,24 +1,30 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss']
+  styleUrls: ['./homepage.component.scss'],
 })
 export class HomepageComponent implements OnInit, AfterViewInit {
 
   typewriter_text: string = "WEB DEVELOPER + DATA SCIENTIST";
   typewriter_display: string = "";
   links: any[];
+  translateY: number = 0
+  width = "100vh"
+  semafore = false;
+  slideTimer = 250
 
   constructor() {
     this.links = [
-      {"name": "About", "href": "#"},
-      {"name": "About", "href": "#"},
-      {"name": "About", "href": "#"},
-      {"name": "About", "href": "#"},
+      { "name": "About", "href": "#" },
+      { "name": "About", "href": "#" },
+      { "name": "About", "href": "#" },
+      { "name": "About", "href": "#" },
     ];
-   }
+
+    this.width = `$(this.links.length)00vh`
+  }
 
   ngOnInit(): void {
   }
@@ -31,6 +37,27 @@ export class HomepageComponent implements OnInit, AfterViewInit {
         clearInterval(interval);
 
     }, 50);
+  }
+
+  scroll(event: any) {
+    if (this.semafore || Math.abs(event.wheelDelta) < 10)
+      return;
+    this.semafore = true
+
+    if (event.wheelDelta < 0) {
+      if (this.translateY !== this.links.length)
+        this.translateY++;
+    }
+    else {
+      if (this.translateY !== 0)
+        this.translateY--;
+    }
+
+    setTimeout(() => { this.semafore = false }, this.slideTimer + 200);
+  }
+
+  scrollTo(idx: number) {
+    this.translateY = idx
   }
 
 }

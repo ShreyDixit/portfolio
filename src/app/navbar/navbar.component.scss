@@ -4,6 +4,7 @@
     position: fixed;
     line-height: 40px;
     text-align: center;
+    z-index: 1000;
 }
 
 .nav div.logo {
@@ -55,7 +56,8 @@
 // Underline Animation
 .nav div.main_list ul li a:after {
     background: none repeat scroll 0 0 transparent;
-    bottom: 0;
+    position: relative;
+    top: -5px;
     content: "";
     display: block;
     height: 2px;
@@ -70,7 +72,7 @@
     left: 0;
 }
 
-.nav div.main_list ul li a.underlined:hover:after {
+.nav div.main_list ul li a.underlined:after {
     width: 100%;
     left: 0;
 }
@@ -89,6 +91,10 @@
     transition: all 0.4s ease;
 }
 
+.logo img {
+    width: 50px;
+    vertical-align: middle;
+}
 /* Media qurey section */
 
 @media screen and (max-width: 768px) {
@@ -325,4 +331,9 @@
     100% {
         transform: translateY(-9px) rotate(135deg);
     }
+}
+
+.affix {
+    padding-bottom: 10px;
+    background-color: #111;
 }
