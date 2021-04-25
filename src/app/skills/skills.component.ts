@@ -20,7 +20,7 @@ export class SkillsComponent implements AfterViewInit {
   ngAfterViewInit() {
     setInterval(() => {
       this.slideTo(this.currentSlide + 1)
-    }, 1000);
+    }, 2000);
     this.width = this.skills.length + "00%";
     this.cdRef.detectChanges();
   }
