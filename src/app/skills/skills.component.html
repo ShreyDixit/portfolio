@@ -1,7 +1,11 @@
-<div class="carousel">
-    <div class="slides" [ngStyle]="{'width': width, 'transform': 'translateX(-' + amountToMove + '%)'}">
-        <div [class]="'skill-slide slide'+i" *ngFor="let skill of skills; let i = index">
-            <img [src]="skill">
+<div class="wrapper">
+    <h1>I can work with</h1>
+
+    <div class="carousel">
+        <div class="slides" [ngStyle]="{'width': width, 'transform': 'translateX(-' + amountToMove + '%)'}">
+            <div [class]="'skill-slide slide'+i" *ngFor="let skill of skills; let i = index">
+                <img [src]="skill">
+            </div>
         </div>
     </div>
 </div>

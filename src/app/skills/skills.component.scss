@@ -1,5 +1,11 @@
+.wrapper {
+    display: grid;
+    place-items: center;
+}
+
 .carousel {
     overflow: hidden;
+    width: 100%;
 }
 
 .slides {
