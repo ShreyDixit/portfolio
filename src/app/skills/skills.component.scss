@@ -1,0 +1,13 @@
+.carousel {
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: 250ms;
+}
+
+.skill-slide {
+    margin: 0 auto;
+    position: relative;
+}

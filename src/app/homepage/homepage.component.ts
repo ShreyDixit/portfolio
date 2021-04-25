@@ -10,6 +10,7 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   typewriter_text: string = "WEB DEVELOPER + DATA SCIENTIST";
   typewriter_display: string = "";
   links: any[];
+  skills: any[];
   translateY: number = 0
   width = "100vh"
   semafore = false;
@@ -22,6 +23,15 @@ export class HomepageComponent implements OnInit, AfterViewInit {
       { "name": "About", "href": "#" },
       { "name": "About", "href": "#" },
     ];
+
+    this.skills = [
+      "/assets/skills/angular.png",
+      "/assets/skills/firebase.png",
+      "/assets/skills/node-js.webp",
+      "/assets/skills/Pytorch.png",
+      "/assets/skills/TensorFlow.png",
+      "/assets/skills/SkLearn.png",
+    ]
 
     this.width = `$(this.links.length)00vh`
   }

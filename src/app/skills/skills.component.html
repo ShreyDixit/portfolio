@@ -1,0 +1,7 @@
+<div class="carousel">
+    <div class="slides" [ngStyle]="{'width': width, 'transform': 'translateX(-' + amountToMove + '%)'}">
+        <div [class]="'skill-slide slide'+i" *ngFor="let skill of skills; let i = index">
+            <img [src]="skill">
+        </div>
+    </div>
+</div>
