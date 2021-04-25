@@ -22,12 +22,12 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     ];
 
     this.skills = [
-      "/assets/skills/angular.png",
-      "/assets/skills/firebase.png",
-      "/assets/skills/node-js.webp",
-      "/assets/skills/Pytorch.png",
-      "/assets/skills/TensorFlow.png",
-      "/assets/skills/SkLearn.png",
+      "assets/skills/angular.png",
+      "assets/skills/firebase.png",
+      "assets/skills/node-js.webp",
+      "assets/skills/Pytorch.png",
+      "assets/skills/TensorFlow.png",
+      "assets/skills/SkLearn.png",
     ]
 
     this.width = `$(this.links.length)00vh`
