@@ -67,4 +67,12 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     this.translateY = idx
   }
 
+  scrollDown() {
+    this.semafore = true
+    if (this.translateY !== this.links.length)
+      this.translateY++;
+
+    setTimeout(() => { this.semafore = false }, this.slideTimer + 200);
+  }
+
 }

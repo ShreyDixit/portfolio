@@ -1,5 +1,7 @@
 <div class="container-all" (window:wheel)="scroll($event)">
     <app-navbar [links]="links" [translateY]="translateY" (clickedElIdx)="scrollTo($event)"></app-navbar>
+    <div class="arrow bounce" [ngClass]="translateY==links.length?'display-none':''"><i class="fa fa-angle-down fa-5x"
+            aria-hidden="true" style="color:#FF6363" (click)="scrollDown()"></i></div>
     <div class="container-sub"
         [ngStyle]="{'transition': ''+slideTimer+'ms', 'width': width, 'transform': 'translateY(-' + translateY*100 + 'vh)'}">
         <div class="full-page" id="about-me">
@@ -18,7 +20,9 @@
                     <p>Hi, I'm Shrey! I'm a Software Developer focused on biilding clean websites and interpretable
                         Machine Learning models!</p>
                 </div>
-                <div class="skills"><app-skills [skills]="skills"></app-skills></div>
+                <div class="skills">
+                    <app-skills [skills]="skills"></app-skills>
+                </div>
             </div>
         </div>
     </div>
