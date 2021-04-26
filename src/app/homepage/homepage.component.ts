@@ -61,6 +61,7 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   }
 
   swipe(event: any) {
+    console.log('any')
     if (this.semafore || Math.abs(event.distance) < 10 || event.direction === 'x')
       return
     this.semafore = true
