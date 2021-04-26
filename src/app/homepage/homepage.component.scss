@@ -64,6 +64,41 @@
   bottom: 50px;
 }
 
+.cv-button {
+  outline: none;
+  padding: 12px;
+  min-width: 100px;
+  border-radius: 2px;
+  border: 2px solid #ff6363;
+  background-color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: fit-content;
+  margin: auto;
+}
+
+.cv-button a {
+  text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1em;
+  color: #ff6363;
+}
+
+.cv-button:hover {
+  background-color: #ff6363;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.cv-button:hover a {
+  color: white;
+}
+
 .blink {
   animation: blink-animation 1s steps(5, start) infinite;
   -webkit-animation: blink-animation 1s steps(5, start) infinite;
