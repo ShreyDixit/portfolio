@@ -1,4 +1,5 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { SwipeEvent } from 'ng-swipe';
 
 @Component({
   selector: 'app-homepage',
@@ -51,14 +52,23 @@ export class HomepageComponent implements OnInit, AfterViewInit {
       return;
     this.semafore = true
 
-    if (event.wheelDelta < 0) {
-      if (this.translateY !== this.links.length)
-        this.translateY++;
-    }
-    else {
-      if (this.translateY !== 0)
-        this.translateY--;
-    }
+    if (event.wheelDelta < 0)
+      this.scrollDown()
+    else
+      this.scrollUp()
+
+    setTimeout(() => { this.semafore = false }, this.slideTimer + 200);
+  }
+
+  swipe(event: any) {
+    if (this.semafore || Math.abs(event.distance) < 10 || event.direction === 'x')
+      return
+    this.semafore = true
+
+    if (event.distance > 0)
+      this.scrollUp()
+    else
+      this.scrollDown()
 
     setTimeout(() => { this.semafore = false }, this.slideTimer + 200);
   }
@@ -68,11 +78,13 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   }
 
   scrollDown() {
-    this.semafore = true
     if (this.translateY !== this.links.length)
       this.translateY++;
+  }
 
-    setTimeout(() => { this.semafore = false }, this.slideTimer + 200);
+  scrollUp() {
+    if (this.translateY !== 0)
+      this.translateY--;
   }
 
 }
