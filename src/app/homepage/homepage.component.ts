@@ -20,6 +20,7 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   constructor() {
     this.links = [
       { "name": "About", "href": "#about" },
+      { "name": "Contact", "href": "#contact" },
     ];
 
     this.skills = [

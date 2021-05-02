@@ -196,3 +196,47 @@ i {
 .display-none {
   display: none;
 }
+
+#footer {
+  background-color: #484848;
+  padding: 10px 0px 8px 0px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+}
+
+#footer p {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0 0 10px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.social-links span {
+  margin-left: 10px;
+}
+
+.social-links a {
+  text-decoration: none;
+}
+
+.social-links a i {
+  color: white;
+  padding: 0px 5px 0px 5px;
+}
+
+.social-links a i:hover {
+  color: #ff6363;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
