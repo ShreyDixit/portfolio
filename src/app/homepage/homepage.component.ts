@@ -17,7 +17,9 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   width = "100vh"
   semafore = false;
   slideTimer = 250
+
   formEndPoint: string = "https://formspree.io/f/xdoyadzg"
+  formMessage: string = "";
 
   contactForm = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -97,7 +99,9 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   async formSubmit() {
     if (this.contactForm.invalid)
       return;
-    
+
+    this.contactForm.disable()
+
     const response = await fetch(this.formEndPoint, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       headers: {
@@ -110,7 +114,7 @@ export class HomepageComponent implements OnInit, AfterViewInit {
       })
     });
 
-    console.log(response);
+    this.formMessage = response.status === 200 ? "I have recieved your message and I will reach out to you shortly" : "Oops, it seems there was error. Please retry after some time"
   }
 
 }

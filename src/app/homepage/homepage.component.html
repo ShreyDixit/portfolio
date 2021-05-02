@@ -39,7 +39,7 @@
                 <div class="about-para">
                     <p>Whether you're interested in working with me or just want to say hello, I'd love to hear from
                         you!</p>
-                    <form class="contact-form center" [formGroup]="contactForm" (onSubmit)="formSubmit()">
+                    <form class="contact-form center" [formGroup]="contactForm" (ngSubmit)="formSubmit()">
                         <mat-form-field appearance="outline" class="full-width">
                             <input formControlName="name" matInput placeholder="Name" required>
                             <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
@@ -67,6 +67,8 @@
                         <button type="submit" name="submit" class="button">
                             SEND MESSAGE
                         </button>
+
+                        <p>{{formMessage}}</p>
                     </form>
                 </div>
                 <div id="footer">
