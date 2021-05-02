@@ -50,28 +50,21 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   scroll(event: any) {
     if (this.semafore || Math.abs(event.wheelDelta) < 10)
       return;
-    this.semafore = true
 
     if (event.wheelDelta < 0)
       this.scrollDown()
     else
       this.scrollUp()
-
-    setTimeout(() => { this.semafore = false }, this.slideTimer + 200);
   }
 
   swipe(event: any) {
-    console.log('any')
     if (this.semafore || Math.abs(event.distance) < 4 || event.direction === 'x')
       return
-    this.semafore = true
 
     if (event.distance > 0)
       this.scrollUp()
     else
       this.scrollDown()
-
-    setTimeout(() => { this.semafore = false }, this.slideTimer + 200);
   }
 
   scrollTo(idx: number) {
@@ -79,13 +72,17 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   }
 
   scrollDown() {
+    this.semafore = true
     if (this.translateY !== this.links.length)
       this.translateY++;
+    setTimeout(() => { this.semafore = false }, this.slideTimer + 200);
   }
 
   scrollUp() {
+    this.semafore = true
     if (this.translateY !== 0)
       this.translateY--;
+    setTimeout(() => { this.semafore = false }, this.slideTimer + 200);
   }
 
 }
