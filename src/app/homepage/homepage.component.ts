@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SwipeEvent } from 'ng-swipe';
 
 @Component({
@@ -16,6 +17,13 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   width = "100vh"
   semafore = false;
   slideTimer = 250
+  formEndPoint: string = "https://formspree.io/f/xdoyadzg"
+
+  contactForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    message: new FormControl('', Validators.required),
+  })
 
   constructor() {
     this.links = [
@@ -84,6 +92,25 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     if (this.translateY !== 0)
       this.translateY--;
     setTimeout(() => { this.semafore = false }, this.slideTimer + 200);
+  }
+
+  async formSubmit() {
+    if (this.contactForm.invalid)
+      return;
+    
+    const response = await fetch(this.formEndPoint, {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: this.contactForm.get('name')?.value,
+        replyto: this.contactForm.get('email')?.value,
+        message: this.contactForm.get('message')?.value
+      })
+    });
+
+    console.log(response);
   }
 
 }

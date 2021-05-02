@@ -20,7 +20,7 @@
                     <p>Hi, I'm Shrey! I'm a Software Developer focused on developing clean websites and building
                         interpretable Machine Learning models!</p>
                 </div>
-                <div class="cv-button">
+                <div class="button">
                     <a target="_blank"
                         href="https://drive.google.com/file/d/1yqfnoJUfaWJ2SOGF7lfTDixSHFPGetRl/view?usp=sharing">View
                         CV</a>
@@ -32,6 +32,43 @@
         </div>
         <div class="full-page">
             <div class="padding-div">
+                <div class="about-heading">
+                    <span style="color:black;">Contact </span>
+                    <span style="color:#FF6363;">Me</span>
+                </div>
+                <div class="about-para">
+                    <p>Whether you're interested in working with me or just want to say hello, I'd love to hear from
+                        you!</p>
+                    <form class="contact-form center" [formGroup]="contactForm" (onSubmit)="formSubmit()">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <input formControlName="name" matInput placeholder="Name" required>
+                            <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
+                                You don't have a name?
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="full-width">
+                            <input formControlName="email" matInput placeholder="Email" required>
+                            <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+                                How will I contact you without an email?
+                            </mat-error>
+                            <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+                                Is that really your email?
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="full-width">
+                            <textarea formControlName="message" matInput placeholder="Message" required></textarea>
+                            <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
+                                What do you wanna talk about?
+                            </mat-error>
+                        </mat-form-field>
+
+                        <button type="submit" name="submit" class="button">
+                            SEND MESSAGE
+                        </button>
+                    </form>
+                </div>
                 <div id="footer">
                     <p>CONNECT WITH ME</p>
                     <div class="social-links">

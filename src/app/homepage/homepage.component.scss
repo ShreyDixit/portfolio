@@ -47,7 +47,7 @@
 .about-para {
   font-size: 20px;
   color: #484848;
-  max-width: 800px;
+  max-width: min(800px, 95%);
   margin: auto;
   text-align: center;
 }
@@ -59,7 +59,7 @@
   position: relative;
 }
 
-.cv-button {
+.button {
   outline: none;
   padding: 12px;
   min-width: 100px;
@@ -71,9 +71,10 @@
   font-weight: bold;
   width: fit-content;
   margin: auto;
+  color: #ff6363;
 }
 
-.cv-button a {
+.button a {
   text-decoration: none;
   text-decoration: none;
   text-align: center;
@@ -81,16 +82,17 @@
   color: #ff6363;
 }
 
-.cv-button:hover {
+.button:hover {
   background-color: #ff6363;
   -webkit-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  color: white;
 }
 
-.cv-button:hover a {
+.button:hover a{
   color: white;
 }
 
@@ -239,4 +241,17 @@ i {
   -ms-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.contact-form {
+  font-size: 12px;
+}
+
+.contact-form input {
+  color: #555;
+  background-color: #fff;
 }
