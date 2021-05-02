@@ -69,7 +69,7 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   }
 
   swipe(event: any) {
-    if (this.semafore || Math.abs(event.distance) < 4 || event.direction === 'x')
+    if (this.semafore || Math.abs(event.distance) < 2 || event.direction === 'x')
       return
 
     if (event.distance > 0)
