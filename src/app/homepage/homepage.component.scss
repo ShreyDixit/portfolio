@@ -53,14 +53,25 @@
   font-size: 20px;
   color: #484848;
   max-width: min(800px, 95%);
-  margin: auto;
+  margin: 10px auto;
   text-align: center;
+}
+
+@media only screen and (max-width: 700px) {
+  .about-para {
+    font-size: 16px;  
+  }
+}
+
+.about-section .button {
+  margin: 15px auto;
 }
 
 .skills {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-grow: 1;
 }
 
 .padding-div {
@@ -81,7 +92,6 @@
   text-transform: uppercase;
   font-weight: bold;
   width: fit-content;
-  margin: auto;
   color: #ff6363;
 }
 
