@@ -38,6 +38,11 @@
   height: 100vh;
 }
 
+.about-section {
+  display: flex;
+  flex-direction: column;
+}
+
 .about-heading {
   font-weight: bold;
   font-size: 36px;
@@ -50,6 +55,12 @@
   max-width: min(800px, 95%);
   margin: auto;
   text-align: center;
+}
+
+.skills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .padding-div {
@@ -92,7 +103,7 @@
   color: white;
 }
 
-.button:hover a{
+.button:hover a {
   color: white;
 }
 
