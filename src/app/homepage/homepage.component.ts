@@ -9,8 +9,11 @@ import { SwipeEvent } from 'ng-swipe';
 })
 export class HomepageComponent implements OnInit, AfterViewInit {
 
-  typewriter_text: string = "WEB DEVELOPER + DATA SCIENTIST";
+  typewriter_texts: string[] = ["ARTIFICIAL INTELLIGENCE", "COMPUTATIONAL NEUROSCIENCE", "FULL-STACK DEVELOPMENT", "COMPUTER VISION", "NATURAL LANGUAGE PROCESSING"];
   typewriter_display: string = "";
+  pointer_typewriter: number = 0
+  pointer_text: number= 0;
+  reverseWord = false;
   links: any[];
   skills: any[];
   translateY: number = 0
@@ -49,13 +52,27 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    let pointer_text = 0;
-    var interval = setInterval(() => {
-      this.typewriter_display += this.typewriter_text[pointer_text++];
-      if (pointer_text === this.typewriter_text.length)
-        clearInterval(interval);
+    console.log("updateTypewriter")
+    var interval: any = setInterval(() => this.updateTypewriter(interval), 30);
+  }
 
-    }, 50);
+  updateTypewriter(interval: any) {
+    console.log("updateTypewriter")
+    this.typewriter_display = this.typewriter_texts[this.pointer_typewriter].substring(0, this.pointer_text + 1);
+    this.pointer_text = this.reverseWord ? this.pointer_text - 1 : this.pointer_text + 1;
+
+    if (this.pointer_text === -1) {
+      this.pointer_typewriter = (this.pointer_typewriter === this.typewriter_texts.length - 1) ? 0 : this.pointer_typewriter + 1
+      this.reverseWord = false;
+    }
+
+    else if (this.pointer_text === this.typewriter_texts[this.pointer_typewriter].length) {
+      this.reverseWord = true;
+      clearInterval(interval)
+      setTimeout(() => {
+        interval = setInterval(() => this.updateTypewriter(interval), 30)
+      }, 500)
+    }
   }
 
   scroll(event: any) {
