@@ -52,12 +52,10 @@ export class HomepageComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    console.log("updateTypewriter")
     var interval: any = setInterval(() => this.updateTypewriter(interval), 30);
   }
 
   updateTypewriter(interval: any) {
-    console.log("updateTypewriter")
     this.typewriter_display = this.typewriter_texts[this.pointer_typewriter].substring(0, this.pointer_text + 1);
     this.pointer_text = this.reverseWord ? this.pointer_text - 1 : this.pointer_text + 1;
 
