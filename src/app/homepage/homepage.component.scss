@@ -4,7 +4,7 @@
 }
 
 #about-me {
-  background: url("https://images.unsplash.com/photo-1611647832580-377268dba7cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80")
+  background: url("/assets/Background.jpeg")
     no-repeat;
   background-size: cover;
   display: grid;
@@ -55,6 +55,7 @@
   max-width: min(800px, 95%);
   margin: 10px auto;
   text-align: center;
+  line-height: 150%;
 }
 
 @media only screen and (max-width: 700px) {
@@ -95,8 +96,7 @@
   color: #ff6363;
 }
 
-.button a {
-  text-decoration: none;
+a {
   text-decoration: none;
   text-align: center;
   font-size: 1em;
@@ -192,11 +192,6 @@
     -webkit-transform: translateY(-15px);
     transform: translateY(-15px);
   }
-}
-
-i {
-  display: block;
-  color: #000;
 }
 
 .arrow {

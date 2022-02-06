@@ -37,11 +37,11 @@ export class HomepageComponent implements OnInit, AfterViewInit {
     ];
 
     this.skills = [
+      "assets/skills/Pytorch.png",
+      "assets/skills/TensorFlow.png",
       "assets/skills/angular.png",
       "assets/skills/firebase.png",
       "assets/skills/node-js.webp",
-      "assets/skills/Pytorch.png",
-      "assets/skills/TensorFlow.png",
       "assets/skills/SkLearn.png",
     ]
 
